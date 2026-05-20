@@ -4,7 +4,6 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { CameraRig } from "./CameraRig";
 import { GlowBlob } from "./GlowBlob";
-import { RetroAnimeScreen } from "./RetroAnimeScreen";
 import { FloatingParticles } from "./FloatingParticles";
 import { VaporPostFX } from "./VaporPostFX";
 
