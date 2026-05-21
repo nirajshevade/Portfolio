@@ -37,6 +37,7 @@ next-env.d.ts
 
 # Python Backend
 chatbot-backend/venv/
+chatbot-backend/.venv/
 chatbot-backend/.env
 chatbot-backend/chroma_db/
 chatbot-backend/__pycache__/
