@@ -19,7 +19,7 @@ type Message = {
 
 export function NeuroBotWidget() {
   const [messages, setMessages] = useState<Message[]>([
-    { role: "bot", content: "Hello! I am Niru AI. Ask me anything about Niraj's skills, projects, or experience." }
+    { role: "bot", content: "Hello! I am Niru AI, Niraj's personal digital twin. Think of me as his interactive resume—ask me anything about his skills, projects, or experience!" }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -50,8 +50,7 @@ export function NeuroBotWidget() {
     setMessages((prev) => [...prev, { role: "bot", content: "" }]);
 
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-      const response = await fetch(`${API_URL}/api/chat`, {
+      const response = await fetch(`/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [userMessage] }),

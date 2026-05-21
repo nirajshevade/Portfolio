@@ -12,6 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nirajshevade.vercel.app"),
   title: "Niraj Shevade | Full-Stack Developer & AI Engineer",
   description: "Portfolio of Niraj Shevade. Building scalable systems, intelligent applications, and pixel-perfect interfaces from Pune, India. Specializing in MERN stack, DevOps, and Cloud Technologies.",
   keywords: [

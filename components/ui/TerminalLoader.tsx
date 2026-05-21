@@ -15,9 +15,20 @@ const BOOT_MESSAGES = [
   "connecting to cloud infrastructure... OK"
 ];
 
-export function TerminalLoader({ progress }: { progress: number }) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function TerminalLoader({ progress: _progress }: { progress?: number }) {
   const [visibleMessages, setVisibleMessages] = useState<string[]>([]);
   
+  useEffect(() => {
+    // Lock scrolling and force scroll to top on mount
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+    
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   useEffect(() => {
     // Reveal messages with a fixed delay rather than mapping to raw progress
     const interval = setInterval(() => {
@@ -38,7 +49,7 @@ export function TerminalLoader({ progress }: { progress: number }) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.02, filter: "blur(10px)" }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="absolute inset-0 z-[100] flex flex-col items-center justify-center bg-[#070707] overflow-hidden font-body text-[var(--color-accent)] select-none pointer-events-none"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#070707] overflow-hidden font-body text-[var(--color-accent)] select-none pointer-events-auto"
     >
       
       {/* Scanline overlay */}

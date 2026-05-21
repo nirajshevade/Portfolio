@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionLabel } from "../ui/SectionLabel";
 import { GlassCard } from "../ui/GlassCard";
 
@@ -29,13 +30,13 @@ export function About() {
         >
           <div className="font-body text-[var(--text-lg)] text-[var(--color-text-secondary)] leading-relaxed space-y-6">
             <p>
-              Hello! I'm <strong className="text-[var(--color-text-primary)] font-medium">Niraj Shevade</strong>, a B.Tech Information Technology student and aspiring software developer passionate about building scalable, data-driven, and cloud-integrated applications. My journey into technology began with a curiosity for solving real-world problems through code, which led me to explore full-stack development, AI/ML, DevOps, and cloud computing.
+              Hello! I&apos;m <strong className="text-[var(--color-text-primary)] font-medium">Niraj Shevade</strong>, a B.Tech Information Technology student and aspiring software developer passionate about building scalable, data-driven, and cloud-integrated applications. My journey into technology began with a curiosity for solving real-world problems through code, which led me to explore full-stack development, AI/ML, DevOps, and cloud computing.
             </p>
             <p>
-              Over time, I've worked on projects ranging from NLP-based resume parsing systems to scalable container monitoring platforms using Docker, Jenkins, Kafka, and Grafana. I enjoy developing efficient backend systems, responsive user interfaces, and reliable cloud deployments while continuously improving performance and user experience.
+              Over time, I&apos;ve worked on projects ranging from NLP-based resume parsing systems to scalable container monitoring platforms using Docker, Jenkins, Kafka, and Grafana. I enjoy developing efficient backend systems, responsive user interfaces, and reliable cloud deployments while continuously improving performance and user experience.
             </p>
             <p>
-              I specialize in full-stack development, data analysis, machine learning fundamentals, and DevOps practices. I'm particularly interested in MERN stack development, cloud technologies like AWS & Azure, automation workflows, and building impactful software solutions that combine innovation with scalability.
+              I specialize in full-stack development, data analysis, machine learning fundamentals, and DevOps practices. I&apos;m particularly interested in MERN stack development, cloud technologies like AWS & Azure, automation workflows, and building impactful software solutions that combine innovation with scalability.
             </p>
           </div>
 
@@ -71,9 +72,11 @@ export function About() {
             {/* Ambient background glow inside the card */}
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent-dim)] to-transparent opacity-20 group-hover:opacity-40 transition-opacity duration-700 z-10" />
             
-            <img 
+            <Image 
               src="/profile.png" 
               alt="Niraj Shevade" 
+              width={500}
+              height={500}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </GlassCard>

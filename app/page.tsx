@@ -25,6 +25,14 @@ export default function Home() {
         <About />
         
         <div className="w-full max-w-5xl mx-auto px-6 pb-24">
+          <div className="mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-[var(--color-text-primary)] leading-[1.1] mb-3">
+              Meet <span className="text-blue-500">NIRU AI.</span>
+            </h2>
+            <p className="font-body text-[var(--text-lg)] text-[var(--color-text-secondary)]">
+              My personal digital twin. Ask it anything about my skills, projects, and experience.
+            </p>
+          </div>
           <NeuroBotWidget />
         </div>
 

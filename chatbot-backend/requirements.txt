@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-chromadb
-sentence-transformers
-google-genai
-pypdf
-python-dotenv
-pydantic
-pydantic-settings
