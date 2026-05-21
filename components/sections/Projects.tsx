@@ -34,7 +34,7 @@ const PROJECTS = [
 export function Projects() {
   return (
     <section id="work" className="relative z-10 w-full max-w-7xl mx-auto px-6 py-32" aria-label="Projects">
-      <SectionLabel num="01" text="Selected Works" />
+      <SectionLabel num="02" text="Selected Works" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {PROJECTS.map((project, index) => (

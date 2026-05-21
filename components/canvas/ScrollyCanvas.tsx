@@ -3,8 +3,9 @@
 import { useRef, useEffect, useCallback } from "react";
 import { useScrollFrame } from "./useScrollFrame";
 import { useImagePreloader } from "./useImagePreloader";
-import { useMotionValueEvent } from "framer-motion";
+import { useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { ScrollContext } from "./ScrollContext";
+import { TerminalLoader } from "@/components/ui/TerminalLoader";
 
 export function ScrollyCanvas({ 
   children,
@@ -100,17 +101,12 @@ export function ScrollyCanvas({
   return (
     <div ref={containerRef} className={`relative ${className}`} style={{ height: containerHeight }}>
       <div className={`sticky top-0 w-full overflow-hidden ${stickyClassName}`}>
-        {/* Loading Progress Bar */}
-        {!isReady && (
-          <div className="absolute inset-0 flex items-center justify-center z-50 bg-[var(--color-bg-primary)]">
-            <div className="w-64 h-1 bg-[var(--color-border)] rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-[var(--color-accent)] transition-all duration-300 ease-out"
-                style={{ width: `${loadProgress * 100}%` }}
-              />
-            </div>
-          </div>
-        )}
+        {/* Terminal Loading Screen */}
+        <AnimatePresence>
+          {!isReady && (
+            <TerminalLoader progress={loadProgress} />
+          )}
+        </AnimatePresence>
         
         <canvas
           ref={canvasRef}

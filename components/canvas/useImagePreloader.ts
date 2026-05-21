@@ -10,6 +10,7 @@ export function useImagePreloader(
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const [isReady, setIsReady] = useState(false);
   const hasStartedRef = useRef(false);
+  const startTime = useRef(Date.now());
 
   useEffect(() => {
     if (hasStartedRef.current) return;
@@ -28,7 +29,12 @@ export function useImagePreloader(
         loaded++;
         setLoadedCount(loaded);
         if (loaded === frameCount) {
-          setIsReady(true);
+          const elapsed = Date.now() - startTime.current;
+          if (elapsed < 2500) {
+            setTimeout(() => setIsReady(true), 2500 - elapsed);
+          } else {
+            setIsReady(true);
+          }
         }
       };
 
@@ -36,7 +42,12 @@ export function useImagePreloader(
         loaded++;
         setLoadedCount(loaded);
         if (loaded === frameCount) {
-          setIsReady(true);
+          const elapsed = Date.now() - startTime.current;
+          if (elapsed < 2500) {
+            setTimeout(() => setIsReady(true), 2500 - elapsed);
+          } else {
+            setIsReady(true);
+          }
         }
       };
 

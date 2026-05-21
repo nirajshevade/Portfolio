@@ -38,7 +38,7 @@ const EXPERIENCES = [
 export function Experience() {
   return (
     <section id="experience" className="relative z-10 w-full max-w-4xl mx-auto px-6 py-32" aria-label="Experience & Education">
-      <SectionLabel num="02" text="Experience" />
+      <SectionLabel num="03" text="Experience" />
 
       <div className="relative border-l border-[var(--color-border)] ml-3 md:ml-4 mt-16">
         {EXPERIENCES.map((exp, index) => (

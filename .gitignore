@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python Backend
+chatbot-backend/venv/
+chatbot-backend/.env
+chatbot-backend/chroma_db/
+chatbot-backend/__pycache__/
+*.pyc

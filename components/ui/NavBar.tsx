@@ -5,6 +5,8 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
+  { name: "About", href: "#about" },
+  { name: "Education", href: "#education" },
   { name: "Work", href: "#work" },
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
@@ -49,19 +51,22 @@ export function NavBar() {
           {NAV_ITEMS.map((item) => {
             const isActive = active === item.name;
             return (
-              <a
+              <motion.a
                 key={item.name}
                 href={item.href}
                 onClick={() => setActive(item.name)}
+                whileHover={{ scale: 1.25, backgroundColor: "var(--color-bg-card)", color: "var(--color-text-primary)" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className={cn(
-                  "px-4 py-2 rounded-[var(--radius-pill)] font-ui text-[var(--text-sm)] transition-all duration-300",
+                  "px-4 py-2 rounded-[var(--radius-pill)] font-ui text-[var(--text-sm)] transition-colors duration-300 origin-center inline-block",
                   isActive
                     ? "bg-[var(--color-accent-dim)] text-[var(--color-accent)]"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-card)]"
+                    : "text-[var(--color-text-secondary)]"
                 )}
               >
                 {item.name}
-              </a>
+              </motion.a>
             );
           })}
         </nav>
