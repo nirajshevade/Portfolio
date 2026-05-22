@@ -6,10 +6,16 @@ import { SectionLabel } from "../ui/SectionLabel";
 import { GlassCard } from "../ui/GlassCard";
 
 const SKILLS = [
-  "React", "React Native", "Node.js", "Python", "FastAPI", 
-  "Django", "MongoDB", "MySQL", "AWS", "Docker", "Kubernetes", 
-  "Jenkins", "Git/GitHub", "Machine Learning", "NLP", 
-  "Data Analysis", "Power BI", "Kafka", "Grafana"
+  // DevOps & Cloud
+  "AWS", "Azure", "Docker", "Kubernetes", "Jenkins", "Grafana", "Terraform", "Linux", "Git/GitHub",
+  // Data Engineering
+  "Kafka", "Apache Spark", "Airflow", "ETL Pipelines",
+  // AI/ML
+  "Machine Learning", "NLP", "Data Analysis", "Power BI", "TensorFlow", "PyTorch",
+  // Backend & Database
+  "Python", "Node.js", "Express.js", "FastAPI", "Django", "MongoDB", "MySQL", "PostgreSQL",
+  // Frontend
+  "JavaScript", "TypeScript", "React", "React Native", "Next.js", "Tailwind CSS"
 ];
 
 export function About() {
