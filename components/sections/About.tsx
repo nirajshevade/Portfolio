@@ -64,45 +64,54 @@ export function About() {
               Technologies & Skills
             </h3>
             
-            <div className="flex flex-wrap gap-2 mb-6">
+            {/* Domain Tabs */}
+            <div className="flex flex-wrap gap-6 mb-8 border-b border-[rgba(255,255,255,0.08)] pb-4 relative">
               {SKILL_DOMAINS.map((domain) => {
                 const isActive = activeDomain === domain.name;
                 return (
                   <button
                     key={domain.name}
                     onClick={() => setActiveDomain(domain.name)}
-                    className={`font-body text-[var(--text-sm)] px-4 py-2 rounded-full border transition-all duration-300 ${
+                    className={`font-ui text-sm tracking-wider uppercase transition-all duration-300 relative px-1 py-2 ${
                       isActive 
-                        ? "bg-[var(--color-accent)]/10 border-[var(--color-accent)] text-[var(--color-accent)] shadow-[0_0_15px_var(--color-accent-dim)]"
-                        : "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.1)] text-[var(--color-text-secondary)] hover:bg-[rgba(255,255,255,0.08)] hover:border-[var(--color-border-hover)]"
+                        ? "text-[var(--color-accent)] font-bold drop-shadow-[0_0_8px_var(--color-accent-dim)]"
+                        : "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium"
                     }`}
                   >
                     {domain.name}
+                    {isActive && (
+                      <motion.div 
+                        layoutId="activeDomainTab"
+                        className="absolute -bottom-[17px] left-0 right-0 h-[2px] bg-[var(--color-accent)] shadow-[0_0_12px_var(--color-accent)]"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
                   </button>
                 );
               })}
             </div>
 
-            <div className="min-h-[140px]">
+            {/* Skills Gallery */}
+            <div className="min-h-[160px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeDomain}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex flex-wrap gap-3"
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.25 }}
+                  className="flex flex-wrap gap-4"
                 >
                   {SKILL_DOMAINS.find(d => d.name === activeDomain)?.skills.map((skill, index) => (
-                    <motion.span
+                    <motion.div
                       key={skill}
-                      initial={{ opacity: 0, scale: 0.9 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.2, delay: index * 0.03 }}
-                      className="font-body text-[var(--text-sm)] text-[var(--color-text-primary)] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.08)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] px-4 py-2 rounded-md transition-all cursor-default"
+                      transition={{ duration: 0.3, delay: index * 0.04 }}
+                      className="font-body text-sm font-medium text-[var(--color-text-primary)] bg-gradient-to-b from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.1)] hover:border-[var(--color-accent)] hover:shadow-[0_0_20px_var(--color-accent-dim)] px-5 py-2.5 rounded-xl transition-all duration-300 cursor-default backdrop-blur-md flex items-center justify-center"
                     >
                       {skill}
-                    </motion.span>
+                    </motion.div>
                   ))}
                 </motion.div>
               </AnimatePresence>
