@@ -13,6 +13,7 @@ const PROJECTS = [
     tags: ["Prometheus", "Docker", "Kafka", "ELK Stack", "Grafana", "Jenkins", "CI/CD"],
     accent: "var(--color-accent)",
     link: "https://github.com/nirajshevade/Scalable-container-health-monitoring-system",
+    liveDemo: "#",
   },
   {
     title: "NLP Resume Parser Platform",
@@ -21,6 +22,7 @@ const PROJECTS = [
     tags: ["FastAPI", "spaCy", "NER", "TF-IDF", "MongoDB Atlas", "Streamlit"],
     accent: "var(--color-accent)",
     link: "https://github.com/nirajshevade/Resume-Parser",
+    liveDemo: "https://resume-parser-x.streamlit.app/",
   },
   {
     title: "Mobile App @ Armtech AI",
@@ -85,25 +87,38 @@ export function Projects() {
                   ))}
                 </div>
 
-                {project.link ? (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative w-full group/btn flex items-center justify-between px-6 py-4 rounded-[var(--radius-pill)] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:shadow-[0_0_24px_var(--color-accent-dim)] transition-all duration-300">
-                    <span className="font-ui text-[var(--text-sm)] font-medium text-[var(--color-text-primary)] group-hover/btn:text-[var(--color-accent)] transition-colors">
-                      View Repository
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center group-hover/btn:bg-[var(--color-accent)] group-hover/btn:text-[var(--color-bg-primary)] transition-all duration-300 transform group-hover/btn:-rotate-45">
-                      <ArrowRight size={14} />
-                    </div>
-                  </a>
-                ) : (
-                  <button className="relative w-full group/btn flex items-center justify-between px-6 py-4 rounded-[var(--radius-pill)] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:shadow-[0_0_24px_var(--color-accent-dim)] transition-all duration-300 cursor-default">
-                    <span className="font-ui text-[var(--text-sm)] font-medium text-[var(--color-text-primary)] transition-colors">
-                      Internal Project
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center transition-all duration-300">
-                      {/* No icon for internal project without link */}
-                    </div>
-                  </button>
-                )}
+                <div className="flex flex-col gap-3">
+                  {project.liveDemo && (
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="relative w-full group/btn flex items-center justify-between px-6 py-4 rounded-[var(--radius-pill)] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:shadow-[0_0_24px_var(--color-accent-dim)] transition-all duration-300">
+                      <span className="font-ui text-[var(--text-sm)] font-medium text-[var(--color-text-primary)] group-hover/btn:text-[var(--color-accent)] transition-colors">
+                        Live Demo
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center group-hover/btn:bg-[var(--color-accent)] group-hover/btn:text-[var(--color-bg-primary)] transition-all duration-300 transform group-hover/btn:-rotate-45">
+                        <ArrowRight size={14} />
+                      </div>
+                    </a>
+                  )}
+
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative w-full group/btn flex items-center justify-between px-6 py-4 rounded-[var(--radius-pill)] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:shadow-[0_0_24px_var(--color-accent-dim)] transition-all duration-300">
+                      <span className="font-ui text-[var(--text-sm)] font-medium text-[var(--color-text-primary)] group-hover/btn:text-[var(--color-accent)] transition-colors">
+                        View Repository
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center group-hover/btn:bg-[var(--color-accent)] group-hover/btn:text-[var(--color-bg-primary)] transition-all duration-300 transform group-hover/btn:-rotate-45">
+                        <ArrowRight size={14} />
+                      </div>
+                    </a>
+                  ) : (
+                    <button className="relative w-full group/btn flex items-center justify-between px-6 py-4 rounded-[var(--radius-pill)] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:shadow-[0_0_24px_var(--color-accent-dim)] transition-all duration-300 cursor-default">
+                      <span className="font-ui text-[var(--text-sm)] font-medium text-[var(--color-text-primary)] transition-colors">
+                        Internal Project
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[var(--color-surface)] flex items-center justify-center transition-all duration-300">
+                        {/* No icon for internal project without link */}
+                      </div>
+                    </button>
+                  )}
+                </div>
               </div>
             </GlassCard>
           </motion.div>
