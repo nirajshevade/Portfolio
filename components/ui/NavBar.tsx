@@ -41,7 +41,7 @@ export function NavBar() {
         className="fixed top-6 left-1/2 z-50 w-auto"
       >
         <nav
-          className="flex items-center gap-1 px-2 py-2 rounded-[var(--radius-pill)] border border-[var(--color-border)] shadow-[0_0_24px_rgba(0,0,0,0.5)]"
+          className="flex items-center gap-1 px-1 sm:px-2 py-1 sm:py-2 rounded-[var(--radius-pill)] border border-[var(--color-border)] shadow-[0_0_24px_rgba(0,0,0,0.5)] max-w-[95vw] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           style={{
             backgroundColor: "rgba(10, 10, 10, 0.8)",
             backdropFilter: "blur(16px)",
@@ -55,11 +55,11 @@ export function NavBar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActive(item.name)}
-                whileHover={{ scale: 1.25, backgroundColor: "var(--color-bg-card)", color: "var(--color-text-primary)" }}
+                whileHover={{ scale: 1.15, backgroundColor: "var(--color-bg-card)", color: "var(--color-text-primary)" }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className={cn(
-                  "px-4 py-2 rounded-[var(--radius-pill)] font-ui text-[var(--text-sm)] transition-colors duration-300 origin-center inline-block",
+                  "px-3 sm:px-4 py-1.5 sm:py-2 rounded-[var(--radius-pill)] font-ui text-[12px] sm:text-[var(--text-sm)] whitespace-nowrap transition-colors duration-300 origin-center inline-block",
                   isActive
                     ? "bg-[var(--color-accent-dim)] text-[var(--color-accent)]"
                     : "text-[var(--color-text-secondary)]"
