@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nirajshevade.vercel.app"),
+  metadataBase: new URL("https://nirajshevade.dev"),
   title: "Niraj Shevade | Full-Stack Developer & AI Engineer",
   description: "Portfolio of Niraj Shevade. Building scalable systems, intelligent applications, and pixel-perfect interfaces from Pune, India. Specializing in MERN stack, DevOps, and Cloud Technologies.",
   keywords: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Niraj Shevade | Full-Stack Developer",
     description: "Portfolio of Niraj Shevade. Building scalable systems and intelligent applications.",
-    url: "https://nirajshevade.vercel.app",
+    url: "https://nirajshevade.dev",
     siteName: "Niraj Shevade Portfolio",
     locale: "en_US",
     type: "website",
@@ -79,8 +79,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Niraj Shevade",
-    "url": "https://nirajshevade.vercel.app",
-    "image": "https://nirajshevade.vercel.app/og-image.png",
+    "url": "https://nirajshevade.dev",
+    "image": "https://nirajshevade.dev/og-image.png",
     "sameAs": [
       "https://github.com/nirajshevade",
       "https://linkedin.com/in/nirajshevade"
