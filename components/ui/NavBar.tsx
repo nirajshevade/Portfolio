@@ -41,6 +41,7 @@ export function NavBar() {
         className="fixed top-6 left-1/2 z-50 w-auto"
       >
         <nav
+          aria-label="Main Navigation"
           className="flex items-center gap-1 px-1 sm:px-2 py-1 sm:py-2 rounded-[var(--radius-pill)] border border-[var(--color-border)] shadow-[0_0_24px_rgba(0,0,0,0.5)] max-w-[95vw] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           style={{
             backgroundColor: "rgba(10, 10, 10, 0.8)",

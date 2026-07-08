@@ -75,8 +75,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Niraj Shevade",
+    "url": "https://nirajshevade.vercel.app",
+    "image": "https://nirajshevade.vercel.app/og-image.png",
+    "sameAs": [
+      "https://github.com/nirajshevade",
+      "https://linkedin.com/in/nirajshevade"
+    ],
+    "jobTitle": "Full-Stack Developer & AI Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Self-Employed"
+    },
+    "description": "Portfolio of Niraj Shevade. Building scalable systems, intelligent applications, and pixel-perfect interfaces from Pune, India."
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${syne.variable} ${dmMono.variable} ${dmSans.variable} antialiased`}>
         {children}
         <Sidebars />
