@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "../ui/GlassCard";
@@ -90,7 +91,7 @@ const BouncingIcons = ({ count }: { count: number }) => {
         const h = container.clientHeight;
         
         for (let i = 0; i < state.length; i++) {
-          let p1 = state[i];
+          const p1 = state[i];
           p1.x += p1.vx;
           p1.y += p1.vy;
           p1.rotation += p1.vr;
@@ -101,25 +102,25 @@ const BouncingIcons = ({ count }: { count: number }) => {
           if (p1.y + p1.radius >= h) { p1.y = h - p1.radius; p1.vy *= -1; }
           
           for (let j = i + 1; j < state.length; j++) {
-            let p2 = state[j];
-            let dx = p2.x - p1.x;
-            let dy = p2.y - p1.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            let minDistance = p1.radius + p2.radius;
+            const p2 = state[j];
+            const dx = p2.x - p1.x;
+            const dy = p2.y - p1.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const minDistance = p1.radius + p2.radius;
             
             if (distance < minDistance && distance > 0) {
-               let overlap = minDistance - distance;
-               let nx = dx / distance;
-               let ny = dy / distance;
+               const overlap = minDistance - distance;
+               const nx = dx / distance;
+               const ny = dy / distance;
                
                p1.x -= nx * overlap / 2;
                p1.y -= ny * overlap / 2;
                p2.x += nx * overlap / 2;
                p2.y += ny * overlap / 2;
                
-               let kx = (p1.vx - p2.vx);
-               let ky = (p1.vy - p2.vy);
-               let p = (nx * kx + ny * ky); 
+               const kx = (p1.vx - p2.vx);
+               const ky = (p1.vy - p2.vy);
+               const p = (nx * kx + ny * ky); 
                
                p1.vx = p1.vx - p * nx;
                p1.vy = p1.vy - p * ny;
@@ -309,9 +310,11 @@ export function Projects() {
 
               {/* Center Image */}
               <div className="shrink-0 w-full lg:w-auto h-full flex justify-center items-center z-10">
-                <img 
-                  src="/WorkInProgress.png" 
-                  alt="Work in Progress" 
+                <Image
+                  src="/WorkInProgress.png"
+                  alt="Work in Progress"
+                  width={1200}
+                  height={900}
                   className="w-full lg:w-auto h-full max-h-[85vh] object-contain rounded-xl shadow-[0_0_50px_rgba(255,0,0,0.15)]"
                 />
               </div>
