@@ -35,7 +35,7 @@ export function Contact() {
 
           <div className="flex flex-col md:items-end gap-10">
             <motion.a 
-              href="https://drive.google.com/file/d/1NQsWh2iiZyVfBvzAaeB3c9GuIsRv97pq/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1TjSUFizDf_B1CFBdd_8PT7-sUsqEc_7o/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
               whileHover="hover"
